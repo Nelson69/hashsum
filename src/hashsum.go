@@ -68,6 +68,7 @@ func main() {
 	for _, fileName := range flag.Args() {
 		f, _ := os.Open(fileName)
 		defer f.Close()
+		hashAlgorithm.Reset()
 		output := genericHashFile(f, hashAlgorithm)
 		if *b64Flag {
 			r64Output := base64.StdEncoding.EncodeToString(output)
