@@ -86,7 +86,7 @@ func main() {
 func genericHashFile(file *os.File, hasher hash.Hash) []byte {
 	file.Seek(0, 0)
 
-	const BUFFER_SIZE = 1024 * 512
+	const BUFFER_SIZE = 1024 * 1024 * 32
 	var buffer [BUFFER_SIZE]byte
 
 	for {
